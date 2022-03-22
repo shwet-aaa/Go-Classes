@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>GoClasses</title>
+  <style>
+      @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/*
+=============== 
+Variables
+===============
+*/
+*{
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+	--brand-purple: hsl(238, 52%, 38%);
+	--brand-purple-transparent: hsla(238, 52%, 38%, 0.4);
+	--brand-green: hsl(128, 52%, 47%);
+	--brand-green-transparent: hsla(128, 52%, 47%, 0.4);
+	--brand-dark-blue: hsl(204, 100%, 37%);
+	--brand-light-blue: hsl(198, 76%, 52%);
+	--header-height: 10vh;
+	--body-background: hsla(0, 0%, 100%, 1);
+	--header-background: rgba(255, 255, 255, 0.8);
+	--text-color: rgba(0, 0, 0, 0.8);
+	--important-text-color: black;
+	--nav-link-hover-background-color: hsla(198, 76%, 52%, 0.2);
+  
+}
+/* addeded media prefernce dark/light */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--body-background: rgb(8, 8, 8);
+		--header-background: rgba(0, 0, 0, 1);
+		--text-color: rgba(255, 255, 255, 0.8);
+		--important-text-color: white;
+		--nav-link-hover-background-color: rgba(255, 255, 255, 0.2);
+    --border-color: crimson;
+	}
+  }
+@media (prefers-color-scheme: light) {
+	:root {
+		--body-background: hsla(0, 0%, 100%, 1);
+	--header-background: rgba(255, 255, 255, 0.8);
+	--text-color: rgba(0, 0, 0, 0.8);
+	--important-text-color: black;
+	--nav-link-hover-background-color: hsla(198, 76%, 52%, 0.2);
+  --border-color: crimson;
+	}
+}
+/*  end */
+body{
+  background-color: var(--body-background);
+  width: 100%;
+  height: 100vh;
+}
+.navbar{
+  
+  /* position: fixed; */
+  float: left;
+  background-color:  var(--header-background);
+  display: block;
+  width: 100%;
+  height: var(--header-height);
+  border-style: solid;
+  border-color: var(--border-color);
+}
+.navbar ul{
+  margin: auto;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+span{
+  color: crimson;
+}
+.navbar ul li{
+  
+  left: 0%;
+  list-style: none;
+  color: var(--text-color);
+   margin-top: auto;
+   margin: auto;
+   font-weight: bold;
+  justify-content: space-between;
+  font-size: 2rem;
+}
+.navbar ul img{
+  border-radius: 5rem;
+  margin-right: 5px;
+}
+/* Dropdown Button */
+.dropbtn {
+  background-color:  var(--body-background);
+  color: var(--text-color);
+  padding: 10px;
+  font-size: 2rem;
+  border-style: solid;
+  border-color: var(--border-color);
+  display: block;
+  width: 100%;
+  margin-top: 1px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  /* display: inline-block; */
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--body-background);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px crimson;
+  z-index: 1;
+  width: 100%;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: var(--text-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: crimson;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: crimson;}
+
+
+#result{
+  overflow-y: auto;
+  overflow-x: auto;
+  color: var(--text-color);
+  background-color: var(--body-background);
+  height: 70vh;
+  width: 30%;
+  float: right;
+  border-style: solid;
+  border-color: var(--border-color);
+  padding: 10px;
+  margin-top: 0.2px;
+}
+#result h1{
+  font-size: 2rem;
+}
+#searchbar{
+  position: fixed;
+  display: inline-block;
+  width: 100%;
+  
+}
+
+#searchbar form input{
+     width: 25%;
+}
+#searchbar form button{
+  width: 3%;
+  height: 3%;
+  background-color: crimson;
+  border-radius: 50%;
+  border-style: none;
+}
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><span>Go</span>Classes</li>
+        <!-- <img src="gify.gif" alt="Computer man" style="width:48px;height:48px;"> -->
+      </ul>
+    </nav>
+  </header>
+  <div class="dropdown">
+    <button class="dropbtn">Classes</button>
+    <div class="dropdown-content">
+      <a href="#">WEB DEV</a>
+      <a href="#">DBMS</a>
+      <a href="#">CTP</a>
+      <a href="#">UNIX</a>
+    </div>
+  </div>
+  <div id="result">
+    <div id="searchbar">
+      <form id="form" autocomplete="off">
+        
+        <input type="text" id="query" placeholder="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+<script>
+$("#form").submit(function(e){
+    e.preventDefault()
+
+var query = $("#query").val();
+var API_key ='6b9ebd6e037a4ae44c9c5a6b0c1ae824'
+var url = 'http://api.serpstack.com/search?access_key=' + API_key + '& type=web&query=' +query
+$.get(url,function(data){
+   
+
+    data.organic_results.forEach(res => {
+        
+        result = `
+        <h1>${res.title}</h1><br><a href= "${res.url}">${res.url}</a> 
+        <p>${res.snippet}</p>
+        `
+        $('#result').append(result);
+    });
+})
+
+
+});
+
+var API_key ='6b9ebd6e037a4ae44c9c5a6b0c1ae824'
+var url = 'http://api.serpstack.com/search?access_key=' + API_key + '& type=web&query=' +query
+
+</script>
+
+</html>
